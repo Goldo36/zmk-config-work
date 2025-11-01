@@ -7,7 +7,7 @@
         compatible = "zmk,combos";
 
         lock {
-            bindings = <&mo 4>;
+            bindings = <&mo 1>;
             key-positions = <43 46>;
         };
     };
