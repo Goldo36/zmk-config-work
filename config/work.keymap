@@ -10,6 +10,82 @@
             bindings = <&mo 1>;
             key-positions = <43 46>;
         };
+
+        Back {
+            bindings = <&kp LC(Z)>;
+            key-positions = <31 30>;
+            layers = <0>;
+        };
+
+        Enter {
+            bindings = <&kp ENTER>;
+            key-positions = <30 44>;
+            layers = <0>;
+        };
+
+        Del {
+            bindings = <&kp DEL>;
+            key-positions = <31 45>;
+            layers = <0>;
+        };
+    };
+
+    macros {
+        Todo: Todo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(T) &kp O &kp MINUS &kp LS(D) &kp O &kp S>;
+            label = "TODO";
+        };
+
+        Jocmt: Jocmt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp J &kp O &kp ENTER>;
+            label = "JOCMT";
+        };
+
+        Separation: Separation {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS>;
+            label = "SEPARATION";
+        };
+
+        Jose: Jose {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(J) &kp O &kp S &kp E>;
+            label = "JOSE";
+        };
+
+        Birken: Hiriendo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(B) &kp I &kp R &kp K &kp E &kp N>;
+            label = "HIRIENDO";
+        };
+
+        Fcr: Fcr {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp ENTER &kp LS(F) &kp LS(C) &kp LS(R) &kp ENTER &kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS &kp MINUS>;
+            label = "FCR";
+        };
+
+        Regards: Regards {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(R) &kp E &kp G &kp A &kp R &kp D &kp S &kp ENTER &kp LS(J) &kp O &kp S &kp E>;
+            label = "REGARDS";
+        };
+
+        Blod: Blod {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ASTERISK &kp ASTERISK>;
+            label = "BLOD";
+        };
     };
 
     keymap {
@@ -44,10 +120,10 @@
 
         third_layer {
             bindings = <
-&none  &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&Regards  &Fcr         &none  &none  &none  &none                 &none  &none  &none  &none  &none  &none
+&Blod     &Separation  &none  &none  &none  &none                 &none  &none  &none  &none  &none  &none
+&Birken   &none        &none  &none  &none  &Jocmt  &none  &none  &none  &none  &none  &none  &none  &none
+&Jose     &none        &none  &none  &none  &trans  &none  &none  &Todo  &none  &none  &none  &none  &none
             >;
         };
 
